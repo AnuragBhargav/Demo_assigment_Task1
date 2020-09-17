@@ -1,17 +1,14 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: apache
+  name: python_app
 spec: 
   replicas: 1
   template:
     metadata:
       labels:
-        app: apache
+        app: python_app
     spec:
-      volumes:
-      - name: html
-        emptyDir: {}
       containers:
       - name: apache2
         image: ar1609/$Image
