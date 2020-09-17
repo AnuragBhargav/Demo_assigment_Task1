@@ -2,12 +2,12 @@ FROM centos
 
 RUN yum -y install python3
 
-ADD code /$WORKSPACE
+ADD code /code
 
 RUN pip3 install -r /code/pip-requirements.txt
 
 WORKDIR /code
-ENV PYTHONPATH '$WORKSPACE'
+ENV PYTHONPATH '/code'
 
 
-ENTRYPOINT ["python3" , "$WORKSPACE/demo.py"]
+ENTRYPOINT ["python3" , "/code/demo.py"]
